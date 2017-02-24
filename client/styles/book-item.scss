@@ -1,0 +1,49 @@
+.book-item {
+  width: 148px;
+  margin-bottom: 18px;
+  margin-left: 18px;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+.book-item__cover {
+  width: 148px;
+  height: 198px;
+  margin-bottom: 18px;
+  border-radius: 4px;
+  box-shadow: 0 9px 18px 0 rgba(0,0,0,.24);
+  display: block;
+  overflow: hidden;
+  transition: 0.25s all;
+
+  img {
+    width: 148px;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px 0 rgba(0,0,0,.48);
+  }
+}
+
+.book-item__title {
+  color: #222;
+  font-size: 12px;
+  display: block;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.book-item__author {
+  color: #999;
+  font-size: 12px;
+  display: block;
+}
+
+.book-item__rating {
+  color: #999;
+  font-size: 12px;
+  display: block;
+}
