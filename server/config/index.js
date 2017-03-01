@@ -8,7 +8,7 @@ export default {
   publicPath: '/public',
   staticPath: '/public/static',
   port: 3000,
-  title: 'React Koa Isomorphic Boilerplate',
+  title: '看豆瓣',
   db: {
     host: 'mongodb://localhost',
     port: 27017,

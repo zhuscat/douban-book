@@ -1,7 +1,7 @@
 {
-  "name": "react-koa-isomorphic-boilerplate",
+  "name": "douban-book",
   "version": "1.0.0",
-  "description": "React Koa Isomorphic Boilerplate",
+  "description": "Browse Douban Books",
   "scripts": {
     "start": "npm run dev",
     "build": "NODE_ENV=production npm run clean && webpack --config webpack.production.config.js",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zhuscat/react-koa-isomorphic-boilerplate.git"
+    "url": "https://github.com/zhuscat/douban-book.git"
   },
   "devDependencies": {
     "asset-require-hook": "^1.0.2",
