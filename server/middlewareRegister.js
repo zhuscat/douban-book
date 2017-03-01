@@ -2,11 +2,13 @@ import path from 'path';
 import koaStatic from 'koa-static';
 import views from 'koa-views';
 import convert from 'koa-convert';
+import helmet from 'koa-helmet';
 import router from './routes';
 
 const viewPath = path.join(__dirname, './views');
 
 export default (app) => {
+  app.use(helmet());
   app.use(convert(koaStatic(path.join(__dirname, '../public'))));
   app.use(views(viewPath, { extension: 'ejs' }));
   app.use(router);
