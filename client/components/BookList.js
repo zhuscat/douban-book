@@ -66,10 +66,13 @@ export default class BookList extends Component {
   }
 
   onScroll() {
-    if (window && (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200)) {
-      const { dispatch } = this.props;
-      const { tag, booklists, sort } = this.props;
-      const booklist = booklists[`${tag ? tag : 'ALL_BOOKS'}-${sort}`];
+    const { dispatch } = this.props;
+    const { tag, booklists, sort } = this.props;
+    const booklist = booklists[`${tag ? tag : 'ALL_BOOKS'}-${sort}`];
+    const { isFetching } = booklist;
+    if (window &&
+      (window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 200) && 
+      !isFetching) {
       dispatch(fetchBooks(this.props.tag, this.props.sort, booklist.page + 1));
     }
   }
