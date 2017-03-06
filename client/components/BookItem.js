@@ -13,7 +13,7 @@ export default class BookItem extends Component {
     return (
       <div className="book-item">
         <div className="book-item__cover">
-          <img src={this.props.picUrl} alt={this.props.title} />
+          <img className="zc-lazy-img" data-src={this.props.picUrl} alt={this.props.title} />
         </div>
         <div className="book-item__info">
           <span className="book-item__title">{this.props.title}</span>

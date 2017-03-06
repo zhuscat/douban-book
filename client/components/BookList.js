@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { fetchBooks } from '../actions/BooksActions';
 import { fetchHotTags } from '../actions/TagsActions';
 import BookItem from '../components/BookItem';
+import LazyLoad from './LazyLoad';
 import Tag from '../components/Tag';
 
 const propTypes = {
@@ -100,22 +101,24 @@ export default class BookList extends Component {
           <Link className="db-sort-tag" to={{ pathname, query: { sort: 'rating' }}}>评分排序</Link>
           <Link className="db-sort-tag" to={{ pathname, query: { sort: 'ratingPeople' }}}>人数排序</Link>
         </div>
-        <div className="db-book-container">
-          {
-            items.map((bookId, idx) => {
-              const book = entities.books[bookId];
-              return (
-                <BookItem key={`${bookId}-${idx}`} {...book} />
-              );
-            })
-          }
-          <div className="book-item" />
-          <div className="book-item" />
-          <div className="book-item" />
-          <div className="book-item" />
-          <div className="book-item" />
-          <div className="book-item" />
-        </div>
+        <LazyLoad>
+          <div className="db-book-container">
+            {
+              items.map((bookId, idx) => {
+                const book = entities.books[bookId];
+                return (
+                  <BookItem key={`${bookId}-${idx}`} {...book} />
+                );
+              })
+            }
+            <div className="book-item" />
+            <div className="book-item" />
+            <div className="book-item" />
+            <div className="book-item" />
+            <div className="book-item" />
+            <div className="book-item" />
+          </div>
+        </LazyLoad>
       </div>
     );
   }
